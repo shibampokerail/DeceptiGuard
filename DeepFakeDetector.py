@@ -4,14 +4,12 @@ import cv2
 import time
 import pyautogui
 from main import load_and_predict
-# Load pre-trained face detection model
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
 
 def capture_and_save_faces():
     while True:
         time.sleep(10)
-        # Take screenshot
         screenshot = pyautogui.screenshot()
         screenshot.save('screenshot.png')
 
@@ -48,10 +46,6 @@ def capture_and_save_faces():
 
             #os.remove(f'face.png')
 
-        # Display the captured frame (optional)
-        cv2.imshow('Captured Frame', img)
-
-        # Wait for 5 seconds or until a key is pressed
         # if cv2.waitKey(5000) & 0xFF == ord('q'):
         #     break
 
@@ -59,7 +53,6 @@ def capture_and_save_faces():
         #     os.remove(f'face_{faces_count}.png')
         #     faces_count -= 1
 
-        # Close OpenCV window
         cv2.destroyAllWindows()
 
 
